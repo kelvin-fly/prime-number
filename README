@@ -1,1 +1,5 @@
 get the prime number,then calculate the sum of units!  this's a test of CVT
+
+1,version1 is  plain,but easy to understand.
+
+2,version2 is use the prepotry of prime number: an unprime number must have least one prime divisor!!!
