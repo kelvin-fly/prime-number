@@ -1,23 +1,40 @@
+/*****   author:kelvin                     ********/
+/*****   email:kelvin.fly.lc@gmail.com     *******/
 #include<stdio.h>
 #include<math.h>
 
-#define NUM 100
-int sum(int *arr,int size);  //Translation of the array!!!
+int sum(int *arr,int size);  //Translation of the array!!! the sum of units.
 
 int main()
 {
-	int array[NUM]={2,3,5},flag=0,i,j,dnumber=3;
-	for(i=6;i<NUM;i++)
+	int array[10000]={2,3,5,7},i,j,dnumber=4, flag;
+	for(i=11;i<(11*11);i++)
 	{
-		for(j=2;j<(i/2);j++)  //cause 5/2==2,so start with 6!!!
+		for(j=0; j<4; j++)  //cause an unprime number must have least one prime divisor!!!
 		{
-			if(i%j==0)
+			flag=1;
+			if(i%array[j]==0)
 			{
 				flag=0;
 				break;
 			}
-			else
-				flag=1;   //flag is frequently erasuring!!!
+		}
+		if(flag==1)
+		{
+			array[dnumber]=i;
+			dnumber++;
+		}
+	}
+	for(i=121; i<121*121; i++)
+	{
+		flag=1;
+		for(j=0; j<dnumber; j++)
+		{
+			if(i%array[j]==0)
+			{
+				flag=0;
+				break;
+			}
 		}
 		if(flag==1)
 		{
@@ -26,7 +43,7 @@ int main()
 		}
 	}
 
-	for(i=0;i<dnumber;i++)
+	for(i=0;i<dnumber;i++)       //print array
 	{
 		printf("%d\t",array[i]);
 		if(i%10==0)
